@@ -13,6 +13,7 @@ interface genre_ids {
 
 export interface Movie {
     adult: boolean,
+    name: string,
     backdrop_path: string,
     genre_ids: genre_ids[],
     id: number,

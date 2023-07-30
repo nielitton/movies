@@ -1,15 +1,17 @@
 import {
+  ButtonBackStyle,
   MoviePageStyleContainer,
   MovieSideInfos,
 } from "@/app/styles-components";
 import { Header } from "@/components/header";
 import { MovieCardContainer } from "@/components/movieCard";
 import { axiosClient } from "@/services/axiosClient";
+import Link from "next/link";
 
-const getDataMovie = async ({ id }: { id: string }) => {
-  const movie = await axiosClient.get(`/movie/${id}`);
+const getDataSerie = async ({ id }: { id: string }) => {
+  const serie = await axiosClient.get(`/tv/${id}`);
 
-  return movie.data;
+  return serie.data;
 };
 
 type Props = {
@@ -19,7 +21,7 @@ type Props = {
 export default async function MoviePage({ params }: Props) {
   const id = params.id;
 
-  const movie = await getDataMovie({ id });
+  const movie = await getDataSerie({ id });
 
   return (
     <>
@@ -49,6 +51,9 @@ export default async function MoviePage({ params }: Props) {
           </div>
         </MovieSideInfos>
       </MoviePageStyleContainer>
+      <ButtonBackStyle>
+        <Link href="/series">Voltar</Link>
+      </ButtonBackStyle>
     </>
   );
 }

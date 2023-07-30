@@ -17,6 +17,7 @@ body {
   --header-back: #dedede;
   --background-color:  rgb(0, 1, 15);
   --text-colors: #131313;
+  --text-colors-light: #00a8c6;
 
   :visited {
     color: inherit;

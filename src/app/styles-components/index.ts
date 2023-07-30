@@ -66,6 +66,49 @@ export const MovieCard = styled.div`
         cursor: pointer;
         border-radius: 22px 0px 22px 0px;
         box-shadow: 3px 3px 5px rgb(0, 0, 0, 0.2);
+        transition: all .5s;
+    }
+    img:hover {
+        transition: all .5s;
+        transform: scale(1.025)
     }
 
+`
+
+export const MoviePageStyleContainer = styled.div`
+    padding: 25px 0px;
+    display: flex;
+    justify-content: space-around;
+`
+
+export const MovieSideInfos = styled.div`
+    width: 25%;
+    h2 {
+        color: var(--text-colors-light);
+        font-weight: bolder;
+        font-size: 1.8rem;
+    }
+    p {
+        font-size: 1.3rem;
+        font-weight: bolder;
+    }
+    .left-infos {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .right-infos {
+        display: flex;
+        gap: 25px;
+    }
+    .genres-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+`
+
+export const ButtonBackStyle = styled.h1`
+    text-align: center;
+    color: var(--text-colors-light);
 `
