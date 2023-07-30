@@ -1,23 +1,24 @@
-import { axiosClient } from "@/services/axiosClient"
-import { useRouter } from "next/router"
+import { Header } from "@/components/header";
+import { axiosClient } from "@/services/axiosClient";
 
 const getDataMovie = async ({ id }: { id: string }) => {
-    const movie = await axiosClient.get(`/movie/${id}`)
+  const movie = await axiosClient.get(`/movie/${id}`);
 
-    return movie.data
-}
+  return movie.data;
+};
 
-export default async function MoviePage() {
-    const path = useRouter()
-    const id = path.replace("/movie/", "")
+type Props = {
+  params: { id: string };
+};
 
-    const movieData = await getDataMovie({ id })
+export default async function MoviePage({ params }: Props) {
+  const id = params.id;
 
-    console.log(movieData)
+  const movie = await getDataMovie({ id });
 
-    return(
-        <>
-            <h1>Movie</h1>
-        </>
-    )
+  return (
+    <>
+      <Header />
+    </>
+  );
 }

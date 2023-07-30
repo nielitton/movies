@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { ContainerHeader } from "../../app/styles-components";
 
-export const Header = () => {
+export const Header = ({}) => {
   return (
     <ContainerHeader>
+        <h1>
+          <Link href="/">Movieee</Link>
+        </h1>
+
       <div>
         <input type="text" placeholder="Qual o filme?" />
         <button>Pesquisar</button>

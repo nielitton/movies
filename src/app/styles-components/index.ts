@@ -7,6 +7,7 @@ export const ContainerHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-around;
+    color: white;
     input {
         width: 20rem;
         height: 2rem;
