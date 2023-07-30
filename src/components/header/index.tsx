@@ -1,18 +1,28 @@
-import Link from "next/link"
+import Link from "next/link";
+import { ContainerHeader } from "../../app/styles-components";
 
 export const Header = () => {
-    return(
-        <>
-            <h1>Movies</h1>
+  return (
+    <ContainerHeader>
+      <div>
+        <input type="text" placeholder="Qual o filme?" />
+        <button>Pesquisar</button>
+      </div>
 
-            <nav>
-                <ul>
-                    <li>About us</li>
-                    <li>
-                        <Link href="/series">Series</Link>
-                    </li>
-                </ul>
-            </nav>
-        </>
-    )
-}
+      <nav>
+        <ul>
+          <li>
+            <Link className="link-header" href="/sobrenos">
+              Sobre nós
+            </Link>
+          </li>
+          <li>
+            <Link className="link-header" href="/series">
+              Series
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </ContainerHeader>
+  );
+};
